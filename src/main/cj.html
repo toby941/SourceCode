@@ -5,10 +5,12 @@
 <title>抽奖</title>
 <script src="js/jquery.js"></script>
 <script>
-	var personArray=["cyy","gn","toby","liero","ss","symon","wy","ym","zp"];
+	var personArray=["liero","wy","ym","symon","zzm","cyy","gn","toby","ss","xy","zp","anna","bob","wq"];
 	var run=false;
 	var num=0;
 	 var oAudio=null;
+	 var stopAudio=null;
+	 var nowIndex=0;
 	$(document).ready(function(){
 		setInterval(function(){
 			if(run){
@@ -16,19 +18,25 @@
 		//$("#photo").attr("src","img/"+personArray[index]+".jpg");
 		$("img").hide();
 		$("#"+personArray[index]).show();
-		
+		nowIndex=index;
 			}
 		},100);
-		$("#start").click(function(){
-			run=true;
-			  oAudio = document.getElementById('myaudio');
-				 oAudio.play();
-		});
-		$("#stop").click(function(){
-			run=false;
-			  oAudio = document.getElementById('myaudio');
+		$(document).keydown(function(event){
+			//32
+		  if(event.keyCode==32){
+		  	 oAudio = document.getElementById('myaudio');
+		  	if(run){
+				run=false;
 				oAudio.pause();
-		});
+				personArray.splice(nowIndex,1);
+			
+			}else{
+				run=true;
+				oAudio.play();
+			
+			}
+		  }
+	});
 	});
  
         function playAudio() {
@@ -52,31 +60,36 @@
                 }
             }
         }
-
 </script>
 <style>
 img {width:800px}
 #b {float: right;}
+#c {margin:0 auto;}
+body {text-align: center;}
 </style>
 </head>
 <body>
 	<div id="b">
-   <button id="start">开始</button>
-    <button id="stop">停止</button>
 	<audio id="myaudio" src="1.mp3" loop="true">
 		您的浏览器不支持 audio 标签。
 	</audio>
+	
 	</div>
 	<div id="c">
+	<img src="./img/liero.jpg" id="liero" />
+	<img src="./img/wy.jpg" id="wy" />
    <img src="./img/cyy.jpg"  id="cyy" />
    <img src="./img/gn.jpg" id="gn" />
-	<img src="./img/liero.jpg" id="liero" />
 	<img src="./img/ss.jpg" id="ss" />
-	<img src="./img/symon.jpg" id="symon" />
-	<img src="./img/wy.jpg" id="wy" />
+	<img src="./img/xy.jpg" id="xy" />
 	<img src="./img/ym.jpg" id="ym" />
+	<img src="./img/symon.jpg" id="symon" />
+	<img src="./img/zzm.jpg" id="zzm" />
 	<img src="./img/zp.jpg" id="zp" />
 	<img src="./img/toby.jpg" id="toby" />
+	<img src="./img/anna.jpg" id="anna" />
+	<img src="./img/bob.jpg" id="bob" />
+	<img src="./img/wq.jpg" id="wq" />
 	</div>
 	
 </body>
