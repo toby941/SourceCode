@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title>抽奖</title>
+<script src="js/jquery.js"></script>
+<script>
+	var personArray=["cyy","gn","toby"];
+	var run=false;
+	var num=0;
+	$(document).ready(function(){
+		/*
+for(var i=0;i<personArray.length;i++){
+			var element=new Image();
+			element.src="./img/"+personArray[i]+".jpg";
+			element.id=personArray[i];
+			element.style="display:none"
+			$("#c").append(element);
+		}
+*/
+		setInterval(function(){
+			if(run){
+		var index=parseInt(Math.random()*(personArray.length));
+		//$("#photo").attr("src","img/"+personArray[index]+".jpg");
+		$("img").hide();
+		$("#"+personArray[index]).show();
+		
+			}
+		},0.1);
+		$("#start").click(function(){
+			run=true;
+		});
+		$("#stop").click(function(){
+			run=false;
+		});
+	});
+ 
+</script>
+<style>
+img {width:800px}
+</style>
+</head>
+<body>
+	<div id="c">
+   <img src="./img/cyy.jpg"  id="cyy" />
+    <img src="./img/gn.jpg" id="gn" />
+	<img src="./img/toby.jpg" id="toby" />
+	</div>
+   <button id="start">开始</button>
+    <button id="stop">停止</button>
+</body>
+</html>
