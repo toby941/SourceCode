@@ -1,26 +1,22 @@
-/*
- * Copyright 2011 MITIAN Technology, Co., Ltd. All rights reserved.
- */
 package com.sourcecode.web;
 
 import java.io.IOException;
 import java.io.UnsupportedEncodingException;
 import java.net.URLEncoder;
 import java.text.MessageFormat;
+import java.text.ParseException;
 
 import net.sf.json.JSONObject;
 
 import org.apache.commons.lang.StringUtils;
 import org.apache.commons.lang.builder.ReflectionToStringBuilder;
 import org.apache.http.HttpResponse;
-import org.apache.http.ParseException;
 import org.apache.http.StatusLine;
 import org.apache.http.client.HttpClient;
 import org.apache.http.client.methods.HttpGet;
 import org.apache.http.impl.client.DefaultHttpClient;
 import org.apache.http.util.EntityUtils;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
+import org.apache.log4j.Logger;
 
 /**
  * HttpClient.java 封装mapabc请求获取省市区方法
@@ -29,7 +25,7 @@ import org.slf4j.LoggerFactory;
  */
 public class MapABCUtil {
 
-    private static Logger logger = LoggerFactory.getLogger(MapABCUtil.class);
+    private static Logger logger = org.apache.log4j.Logger.getLogger(MapABCUtil.class);
 
     public final static Integer HTTP_RESPONSE_STATUS_SUCCESS_CODE = 200;
 
