@@ -1,0 +1,96 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title>抽奖</title>
+<script src="js/jquery.js"></script>
+<script>
+	var personArray=["liero","wy","ym","symon","zzm","cyy","gn","toby","ss","xy","zp","anna","bob","wq"];
+	var run=false;
+	var num=0;
+	 var oAudio=null;
+	 var stopAudio=null;
+	 var nowIndex=0;
+	$(document).ready(function(){
+		setInterval(function(){
+			if(run){
+		var index=parseInt(Math.random()*(personArray.length));
+		//$("#photo").attr("src","img/"+personArray[index]+".jpg");
+		$("img").hide();
+		$("#"+personArray[index]).show();
+		nowIndex=index;
+			}
+		},100);
+		$(document).keydown(function(event){
+			//32
+		  if(event.keyCode==32){
+		  	 oAudio = document.getElementById('myaudio');
+		  	if(run){
+				run=false;
+				oAudio.pause();
+				personArray.splice(nowIndex,1);
+			
+			}else{
+				run=true;
+				oAudio.play();
+			
+			}
+		  }
+	});
+	});
+ 
+        function playAudio() {
+            if (window.HTMLAudioElement) {
+                try {
+                     oAudio = document.getElementById('myaudio');
+                    var audioURL = "1.mp3" 
+
+
+                    // Tests the paused attribute and set state. 
+                    if (oAudio.paused) {
+                        oAudio.play();
+                    }
+                    else {
+                        oAudio.pause();
+                    }
+                }
+                catch (e) {
+                    // Fail silently but show in F12 developer tools console
+                     if(window.console && console.error("Error:" + e));
+                }
+            }
+        }
+</script>
+<style>
+img {width:800px}
+#b {float: right;}
+#c {margin:0 auto;}
+body {text-align: center;}
+</style>
+</head>
+<body>
+	<div id="b">
+	<audio id="myaudio" src="1.mp3" loop="true">
+		您的浏览器不支持 audio 标签。
+	</audio>
+	
+	</div>
+	<div id="c">
+	<img src="./img/liero.jpg" id="liero" />
+	<img src="./img/wy.jpg" id="wy" />
+   <img src="./img/cyy.jpg"  id="cyy" />
+   <img src="./img/gn.jpg" id="gn" />
+	<img src="./img/ss.jpg" id="ss" />
+	<img src="./img/xy.jpg" id="xy" />
+	<img src="./img/ym.jpg" id="ym" />
+	<img src="./img/symon.jpg" id="symon" />
+	<img src="./img/zzm.jpg" id="zzm" />
+	<img src="./img/zp.jpg" id="zp" />
+	<img src="./img/toby.jpg" id="toby" />
+	<img src="./img/anna.jpg" id="anna" />
+	<img src="./img/bob.jpg" id="bob" />
+	<img src="./img/wq.jpg" id="wq" />
+	</div>
+	
+</body>
+</html>
