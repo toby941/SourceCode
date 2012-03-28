@@ -3,6 +3,9 @@
  */
 package com.sourcecode.web;
 
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
+
 import org.apache.commons.io.IOUtils;
 
 /**
@@ -20,6 +23,18 @@ public class AppName {
     }
 
     public static void main(String[] args) throws Exception {
-        System.out.println(getAppName(null));
+        String info = getAppName(null);
+        // System.out.println(info);
+        String[] arr = info.split("\r\n");
+        Pattern p = Pattern.compile("application-label:'(.*)'");
+        for (int i = 0; i < arr.length; i++) {
+            if (arr[i].startsWith("application-label")) {
+                Matcher matcher = p.matcher("application-label:'Dungeon Raid'");
+                while (matcher.find()) {
+                    System.out.println(matcher.group(1));
+                }
+            }
+        }
+
     }
 }
