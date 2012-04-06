@@ -32,7 +32,7 @@ public class BaiduImage {
     static String BAIUD_IMG_URL_PREFIX = "http://image.baidu.com";
 
     static String SCRIPT_IMG =
-            "http://image.baidu.com/i?tn=baiduimage&ct=201326592&cl=2&lm=-1&st=-1&fm=index&fr=&sf=1&fmq=1333707568520_R&pv=&ic=0&nc=1&z=&se=1&showtab=0&fb=0&width=&height=&face=0&istype=2&word=android&s=1#z=&width=480&height=800&pn=0";
+            "http://image.baidu.com/i?tn=baiduimage&ct=201326592&cl=2&lm=-1&st=-1&fm=index&fr=&sf=1&fmq=1333707568520_R&pv=&ic=0&nc=1&z=&se=1&showtab=0&fb=0&width=&height=&face=0&istype=2&word=MM&s=1#z=&width=480&height=800&pn=0";
 
     /**
      * 抓取给定url转化为string
