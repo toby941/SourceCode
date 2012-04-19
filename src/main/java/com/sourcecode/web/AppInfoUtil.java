@@ -154,15 +154,17 @@ public class AppInfoUtil {
             "insert into CORE_APP_INFO(APP_NAME, APP_ID, MEMBER_ID, PACKAGE_NAME,VERSION_CODE, VERSION_NAME, SDK_VERSION, ICON,LANUCH_ACTIVITY, ORIGINAL_INFO)values (\"{0}\",\"{1}\",\"{2}\",\"{3}\",\"{4}\",\"{5}\", \"{6}\",\"{7}\",\"{8}\", \"{9}\");";
 
     public static void main(String[] args) throws Exception {
-        // String filePath = "D:\\apkall\\1234\\1244_23342_assd.apk";
-        // List<String> infoList = getAppInfo(filePath);
-        // AppInfo appInfo = analyzeApkInfo(filePath);
-        Integer count = 0;
-        List<String> fileList = new ArrayList<String>();
-        fileList = getFile("L:\\audit_app", count, "apk", fileList);
-        List<String> dealFileList = handleDuplicateApk(fileList);
-        System.out.println(dealFileList.size());
-        writeSqlFile(dealFileList);
+        String filePath = "D:\\android\\hack\\dex2jar-0.0.9.8\\tyui-signed.apk";
+        List<String> infoList = getAppInfo(filePath);
+        for (String s : infoList) {
+            System.out.println(s);
+        }
+        // Integer count = 0;
+        // List<String> fileList = new ArrayList<String>();
+        // fileList = getFile("L:\\audit_app", count, "apk", fileList);
+        // List<String> dealFileList = handleDuplicateApk(fileList);
+        // System.out.println(dealFileList.size());
+        // writeSqlFile(dealFileList);
     }
 
     private static void writeSqlFile(List<String> dealFileList) throws Exception {

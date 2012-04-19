@@ -1,12 +1,16 @@
 package com.sourcecode.web;
 
+import java.io.File;
 import java.net.URL;
 import java.text.MessageFormat;
 import java.util.ArrayList;
+import java.util.HashSet;
 import java.util.List;
+import java.util.Set;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
+import org.apache.commons.io.FileUtils;
 import org.apache.commons.lang.StringUtils;
 import org.apache.http.HttpResponse;
 import org.apache.http.StatusLine;
@@ -120,17 +124,70 @@ public class BaiduImage {
 
     private static Pattern pattern = Pattern.compile(".*\"objURL\":\"(.*)\",\"fromURL\".*");
 
-    public static void main(String[] args) throws Exception {
-        String json = getImgUrlFromScript();
-        // System.out.println(json);
-        String imgs[] = json.split("currentIndex");
+    private static Pattern pattern_img = Pattern.compile(".*imgurl=(.*.jpg).*");
+
+    private static String imgUrl =
+            "http://www.google.com.hk/search?page={0}&start={1}&q=MM+%E5%A3%81%E7%BA%B8&hl=zh-CN&newwindow=1&c2coff=1&safe=strict&sa=G&gbv=2&tbs=isz:ex,iszw:480,iszh:800&biw=1643&bih=352&tbm=isch&ijn=4&ei=HyKCT6SRMeyUiAe2_9W_BA&sprg=6";
+
+    public static String getFile() throws Exception {
+        StringBuffer sb = new StringBuffer();
+        for (int i = 0; i < 150; i++) {
+            String request = MessageFormat.format(imgUrl, i + 1, (i + 1) * 80);
+            String json = getHTML(request);
+            sb.append(json);
+            Thread.sleep(500L);
+        }
+        return sb.toString();
+    }
+
+    public static void getTmpJpg() throws Exception {
+        // String json = FileUtils.readFileToString(new File("C:\\1.txt"));
+        String json = getFile();
+        String imgs[] = json.split("target");
+        Set<String> images = new HashSet<String>();
         for (int i = 0; i < imgs.length; i++) {
             String info = imgs[i];
-            Matcher m = pattern.matcher(info);
+            Matcher m = pattern_img.matcher(info);
             if (m.matches()) {
                 System.out.println(m.group(1).trim());
+                images.add(m.group(1).trim());
             }
         }
+        System.out.println(images.size());
+        putStringToFile(images);
+        // writeToFile(images);
+    }
 
+    public static void putStringToFile(Set<String> urls) throws Exception {
+        FileUtils.writeLines(new File("C:\\3.txt"), urls, true);
+    }
+
+    public static Set<String> getStringFromFile() throws Exception {
+        List<String> lists = FileUtils.readLines(new File("C:\\2.txt"));
+        Set<String> imgSet = new HashSet<String>();
+        for (int i = 0; i < lists.size(); i++) {
+            imgSet.add(lists.get(i));
+        }
+        return imgSet;
+    }
+
+    public static void writeToFile(Set<String> urls) throws Exception {
+        String[] array = urls.toArray(new String[urls.size()]);
+        for (int i = 0; i < array.length; i++) {
+            try {
+                HttpClient httpclient = new DefaultHttpClient();
+                HttpGet httpGet = new HttpGet(array[i]);
+                HttpResponse response = httpclient.execute(httpGet);
+                FileUtils.writeByteArrayToFile(new File("C:\\tmp\\b" + i + ".jpg"), EntityUtils.toByteArray(response.getEntity()));
+            } catch (Exception e) {
+                // TODO Auto-generated catch block
+                e.printStackTrace();
+            }
+        }
+    }
+
+    public static void main(String[] args) throws Exception {
+        Set<String> imgs = getStringFromFile();
+        writeToFile(imgs);
     }
 }
