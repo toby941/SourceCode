@@ -50,6 +50,9 @@ public class IpUtil {
         HttpClient httpclient = new DefaultHttpClient();
         HttpGet httpGet = new HttpGet(requestUrl);
         httpGet.setHeader("x-forwarded-for", "222.39.237.99");
+        httpGet.setHeader("x-forwarded-for", "222.39.237.99");
+        httpGet.setHeader("Proxy-Client-IP", "222.39.237.99");
+        httpGet.setHeader("WL-Proxy-Client-IP", "222.39.237.99");
         HttpResponse response = httpclient.execute(httpGet);
         StatusLine statusLine = response.getStatusLine();
         if (new Integer(200).equals(statusLine.getStatusCode())) {
