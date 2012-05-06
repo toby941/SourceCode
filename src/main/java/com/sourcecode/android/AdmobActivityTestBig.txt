@@ -1,0 +1,56 @@
+/*
+ * Copyright 2012 MITIAN Technology, Co., Ltd. All rights reserved.
+ */
+package com.sourcecode.android;
+
+import java.util.Random;
+
+import android.test.ActivityInstrumentationTestCase2;
+import android.test.suitebuilder.annotation.SmallTest;
+import android.view.View;
+
+import com.ask.mt.AdmobActivity;
+import com.jayway.android.robotium.solo.Solo;
+
+/**
+ * WatchTest.java
+ * 
+ * @author baojun
+ */
+public class AdmobActivityTestBig extends ActivityInstrumentationTestCase2<AdmobActivity> {
+    private Solo solo;
+
+    /**
+     * @param activityClass
+     */
+    public AdmobActivityTestBig() {
+        super("com.ask.mt", AdmobActivity.class);
+    }
+
+    @Override
+    public void setUp() throws Exception {
+        solo = new Solo(getInstrumentation(), getActivity());
+    }
+
+    private Integer getSecond() {
+        Integer seconds = new Random().nextInt() % 37 + 1;
+        if (seconds < 0) {
+            seconds = seconds * -1;
+        }
+        if (seconds == 0) {
+            seconds = 7;
+        }
+        return seconds;
+    }
+
+    private View getView() {
+        return solo.getCurrentActivity().findViewById(0x7f050001);
+    }
+
+    @SmallTest
+    public void testa() {
+        solo.sleep(getSecond() * 1000);
+        solo.clickOnView(getView());
+    }
+
+}
