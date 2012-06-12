@@ -89,8 +89,81 @@ class Des3 {
         return bOut;
     }
 
-    public static void main(String[] args) {
+    public void des() {
+        System.out.print("R_ONLINE :  ");
+        System.out.println(Des3.des("84bVlfSBjT9lcfYS_gsHucCI0i2VIZQTsAlr8d8U7mM="));
+        System.out.print("R_LONGLAT :  ");
+        System.out.println(Des3.des("84bVlfSBjT9lcfYS_gsHucCI0i2VIZQTtAgNfSJrXwOfNsEYmx4x_w=="));
+        System.out.print("R_LOCATION :  ");
+        System.out.println(Des3.des("84bVlfSBjT9lcfYS_gsHucCI0i2VIZQTtAgNfSJrXwMjlUd0zZ7BTAjldlM56kJ7"));
+        System.out.print("R_AD :  ");
+        System.out.println(Des3.des("84bVlfSBjT9lcfYS_gsHucCI0i2VIZQTrDrSGf-LNX8="));
+        System.out.print("R_BANNERSHOW :  ");
+        System.out.println(Des3.des("84bVlfSBjT9lcfYS_gsHucCI0i2VIZQT_tuBtBw0dU7UW3rCFqLK0g=="));
+        System.out.print("R_ADSHOW :  ");
+        System.out.println(Des3.des("84bVlfSBjT9lcfYS_gsHucCI0i2VIZQTnvQwvzqbC3oI5XZTOepCew=="));
+        System.out.print("R_ADSHOWFINISHED :  ");
         System.out.println(Des3.des("84bVlfSBjT9lcfYS_gsHucCI0i2VIZQTrgLfKsKBJDb-ECj5LVLgYw=="));
     }
 
+    public static void ens() {
+        System.out.print("R_ONLINE :  ");
+        System.out.println(Des3.ens(HOST + "/rest/online"));
+        System.out.print("R_LONGLAT :  ");
+        System.out.println(Des3.ens(HOST + "/rest/geolocation/ll"));
+        System.out.print("R_LOCATION :  ");
+        System.out.println(Des3.ens(HOST + "/rest/geolocation/pca"));
+        System.out.print("R_AD :  ");
+        System.out.println(Des3.ens(HOST + "/rest/ads"));
+        System.out.print("R_BANNERSHOW :  ");
+        System.out.println(Des3.ens(HOST + "/rest/banner/show"));
+        System.out.print("R_ADSHOW :  ");
+        System.out.println(Des3.ens(HOST + "/rest/ad/show"));
+        System.out.print("R_ADSHOWFINISHED :  ");
+        System.out.println(Des3.ens(HOST + "/rest/ad/finish"));
+    }
+    public static String HOST = "http://192.168.1.11";
+
+    // public static String HOST="http://ad.airad.com";
+    public static void main(String[] args) {
+        ens();
+
+    }
+
+    // 通知上线
+    protected static final String R_ONLINE = "84bVlfSBjT9lcfYS_gsHucCI0i2VIZQTsAlr8d8U7mM=";
+    // 提交SDK经纬度信息
+    protected static final String R_LONGLAT = "84bVlfSBjT9lcfYS_gsHucCI0i2VIZQTtAgNfSJrXwOfNsEYmx4x_w==";
+    // 提交SDK地理位置
+    protected static final String R_LOCATION = "84bVlfSBjT9lcfYS_gsHucCI0i2VIZQTtAgNfSJrXwMjlUd0zZ7BTAjldlM56kJ7";
+    // 请求广告ID列表
+    protected static final String R_AD = "84bVlfSBjT9lcfYS_gsHucCI0i2VIZQTrDrSGf-LNX8=";
+    // Banner展示计数
+    protected static final String R_BANNERSHOW = "84bVlfSBjT9lcfYS_gsHucCI0i2VIZQT_tuBtBw0dU7UW3rCFqLK0g==";
+    // Ad载入完毕
+    protected static final String R_ADSHOW = "84bVlfSBjT9lcfYS_gsHucCI0i2VIZQTnvQwvzqbC3oI5XZTOepCew==";
+    // Ad展示结束
+    protected static final String R_ADSHOWFINISHED = "84bVlfSBjT9lcfYS_gsHucCI0i2VIZQTrgLfKsKBJDb-ECj5LVLgYw==";
+
+    // // 通知上线
+    // protected static final String R_ONLINE =
+    // "xJ4PXRs7JsC1w5IgDAT7Mth-nl88fsTIsAlr8d8U7mM=";
+    // // 提交SDK经纬度信息
+    // protected static final String R_LONGLAT =
+    // "xJ4PXRs7JsC1w5IgDAT7Mth-nl88fsTItAgNfSJrXwOfNsEYmx4x_w==";
+    // // 提交SDK地理位置
+    // protected static final String R_LOCATION =
+    // "xJ4PXRs7JsC1w5IgDAT7Mth-nl88fsTItAgNfSJrXwMjlUd0zZ7BTAjldlM56kJ7";
+    // // 请求广告ID列表
+    // protected static final String R_AD =
+    // "xJ4PXRs7JsC1w5IgDAT7Mth-nl88fsTIrDrSGf-LNX8=";
+    // // Banner展示计数
+    // protected static final String R_BANNERSHOW =
+    // "xJ4PXRs7JsC1w5IgDAT7Mth-nl88fsTI_tuBtBw0dU7UW3rCFqLK0g==";
+    // // Ad载入完毕
+    // protected static final String R_ADSHOW =
+    // "xJ4PXRs7JsC1w5IgDAT7Mth-nl88fsTInvQwvzqbC3oI5XZTOepCew==";
+    // // Ad展示结束
+    // protected static final String R_ADSHOWFINISHED =
+    // "xJ4PXRs7JsC1w5IgDAT7Mth-nl88fsTIrgLfKsKBJDb-ECj5LVLgYw==";
 }
