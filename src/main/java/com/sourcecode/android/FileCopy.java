@@ -31,6 +31,31 @@ public class FileCopy {
     static String copyProjectName[] = new String[] { "1", "2", "3", "4", "7", "8", "12", "14", "15", "16" };
     static String path = "D:\\workspace\\";
     static String toPath = "D:\\release\\mincow\\";
+    static String oldLibFileName = "hazon_20120706.jar";
+    static String workspacePath = "D:\\workspace\\";
+
+    /**
+     * 新旧lib替换
+     * 
+     * @param newLibPath
+     * @throws IOException
+     */
+    public static void changeLibs(String newLibPath) throws IOException {
+        File newLibsFile = new File(newLibPath);
+        for (int i = 0; i < copyProjectName.length; i++) {
+            File f = new File(workspacePath + projectName[i] + "\\libs");
+            if (f != null && f.exists()) {
+                File[] files = f.listFiles();
+                for (File inFile : files) {
+                    if (inFile.getName().toLowerCase().contains("hazon")) {
+                        inFile.delete();
+                        break;
+                    }
+                }
+                FileUtils.copyFileToDirectory(newLibsFile, f);
+            }
+        }
+    }
 
     public static void main(String[] args) throws Exception {
         for (int i = 0; i < projectName.length; i++) {
@@ -40,5 +65,7 @@ public class FileCopy {
             }
             copyFile(path + projectName[i], toPath + copyProjectName[i]);
         }
+        // changeLibs("D://tmp//hazon_20120725.jar");
+
     }
 }

@@ -107,6 +107,10 @@ class Des3 {
     }
 
     public static void ens() {
+        System.out.print("HOST :  ");
+        System.out.println(Des3.ens(HOST));
+        System.out.print("ONLINE :  ");
+        System.out.println(Des3.ens("/rest/online"));
         System.out.print("R_ONLINE :  ");
         System.out.println(Des3.ens(HOST + "/rest/online"));
         System.out.print("R_LONGLAT :  ");
@@ -122,14 +126,13 @@ class Des3 {
         System.out.print("R_ADSHOWFINISHED :  ");
         System.out.println(Des3.ens(HOST + "/rest/ad/finish"));
     }
-    public static String HOST = "http://192.168.1.11";
+    public static String HOST = "http://192.168.1.40";
 
     // public static String HOST="http://ad.airad.com";
     public static void main(String[] args) {
         ens();
-
+        System.out.println(des("xJ4PXRs7JsC1w5IgDAT7MgYQHwKSk_Akl5AdCL2CRnnpLy0bAYcdIw=="));
     }
-
     // 通知上线
     protected static final String R_ONLINE = "84bVlfSBjT9lcfYS_gsHucCI0i2VIZQTsAlr8d8U7mM=";
     // 提交SDK经纬度信息
