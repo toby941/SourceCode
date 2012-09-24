@@ -108,5 +108,10 @@
       	<artifactId>jsoup</artifactId>
       	<version>1.6.3</version>
       </dependency>
+      <dependency>
+      	<groupId>taobao</groupId>
+      	<artifactId>taobao-sdk-java</artifactId>
+      	<version>20110308</version>
+      </dependency>
   </dependencies>
 </project>
