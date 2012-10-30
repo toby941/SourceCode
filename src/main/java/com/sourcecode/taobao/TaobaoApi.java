@@ -29,7 +29,7 @@ public class TaobaoApi {
     }
 
     static String sql =
-            "insert into MINCOW_SHOP_CATS (CID, PARENT_CID, NAME, IS_PARENT, STATUS, SORT_ORDER, ADD_TIME) values ({0}, 0, {1}, 0 , \"1\", 1,now());";
+            "insert into MINCOW_SHOP_CATS (CID, PARENT_CID, NAME, IS_PARENT, STATUS, SORT_ORDER, ADD_TIME,CAT_TYPE) values ({0}, 0, {1}, 0 , \"1\", 1,now(),1);";
 
     public static void getJsonToSql() throws Exception {
         String jsonStr = FileUtils.readFileToString(new File("D:/tmp/json.txt"), "UTF-8");

@@ -18,7 +18,6 @@
 	<classpathentry kind="lib" path="src/main/resource/lib/Jama-1.0.2.jar"/>
 	<classpathentry kind="lib" path="src/main/resource/lib/customizer.jar"/>
 	<classpathentry kind="lib" path="src/main/resource/lib/jmf.jar"/>
-	<classpathentry kind="lib" path="src/main/resource/lib/jmf.properties"/>
 	<classpathentry kind="lib" path="src/main/resource/lib/mediaplayer.jar"/>
 	<classpathentry kind="lib" path="src/main/resource/lib/multiplayer.jar"/>
 	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
