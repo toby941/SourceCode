@@ -1,0 +1,51 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title></title>
+<style type="text/css">
+/*reset*/
+body{background:#fff;font:12px/1.6 tahoma,arial,\5b8b\4f53,sans-serif;color:#333}
+body,h1,h2,h3,h4,h5,h6,hr,p,th,td{margin:0;padding:0}
+td,th{font-size:12px}
+h1{font-size:14px;margin-bottom:10px}
+h2{font-size:14px;margin:10px 0 5px 0}
+h3{font-size:12px;margin:5px 0}
+h4{background:#f2f2f2;margin:5px 0; padding:2px 5px}
+a:link,a:visited{color:#1cb3b9;text-decoration:none}
+a:hover{color:#31babf;text-decoration:underline}
+img{border:0}
+p{margin:10px 0}
+hr{background:#666;color:#666;margin:20px 0}
+body {background:#e3e3e3}
+table{border-collapse:collapse;border-spacing:0}
+</style>
+</head>
+
+<body>
+<table width="600" border="0" align="center" cellpadding="0" cellspacing="0" style="margin:auto;">
+  <tr>
+    <td><img src="http://www.airad.com/images/email/121105/top.jpg" alt="airAD大气创媒 开放日" width="600" height="379" /></td>
+  </tr>
+  <tr>
+    <td style="background:#fff;padding:10px 30px 30px 30px">
+    <h2>尊敬的 ${username} 先生/女士：</h2>
+      <h2>您好！</h2>
+      <p>airAD大气创媒 一直致力于提供最优质的移动互联网营销服务，我们时刻关注您的想法和意见。</p>
+      <p>在移动互联网飞速发展的今天，智能手机等移动平台上的营销模式已凸显其不可忽视的力量。airAD大气创媒特此组织此次开放日活动，意在与大家一同探讨移动营销发展的新思路，相互交流，增进了解。</p>
+      <p>本次开放日定于 <strong style="color:#00b4b9">2012年11月24日 14:00 在本公司内</strong> 进行，真诚期盼您的光临！</p>
+    <p>让我们同叙友谊，共话未来，共同探索互赢之路！</p>
+    <hr />
+    <p><strong>地址：</strong>南京市鼓楼区察哈尔路华严岗1号 智慧谷科技园（原南京市旅游学校）A座8楼<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;米田科技有限公司</p>
+<p><img src="http://www.airad.com/images/email/121105/maps.jpg" width="535" height="470" /></p>
+<p><strong>交通指南：</strong>您可乘游4、21、66、67、131、132、172至丁山宾馆，或143、149至华严岗门站下车。
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;如果打车，建议上车后请司机送至丁山宾馆附近，原来南京旅游学校即可。</p>
+    </td>
+  </tr>
+  <tr>
+    <td style="text-align:center;padding:5px 30px 30px 30px">&copy; 2011-2012 米田科技有限公司 版权所有</td>
+  </tr>
+</table>
+</body>
+</html>
