@@ -92,8 +92,8 @@ public class MailComponent {
         if (mailSender == null) {
             mailSender = new JavaMailSenderImpl();
             mailSender.setHost("mail.airad.com");
-            mailSender.setUsername("devsupport@airad.com");
-            mailSender.setPassword("xxx123456");
+            mailSender.setUsername("contact@airad.com");
+            mailSender.setPassword("contact-2011");
             java.util.Properties properties = new java.util.Properties();
             properties.put("mail.smtp.auth", "true");
             properties.put("mail.smtp.timeout", "25000");

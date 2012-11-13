@@ -123,5 +123,10 @@
       	<artifactId>velocity</artifactId>
       	<version>1.7</version>
       </dependency>
+      <dependency>
+      	<groupId>javapns</groupId>
+      	<artifactId>javapns</artifactId>
+      	<version>2.2</version>
+      </dependency>
   </dependencies>
 </project>
