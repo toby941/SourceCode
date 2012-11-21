@@ -76,14 +76,17 @@ public class MapOffset {
     // 沙县小吃 32.075147, 118.753981 11875 3207 973 448 118.74876142125703 32.07718338470381
     // 察哈尔车站 32.075541, 118.751902 118.74668242125699 32.07757737592766
     // 金城路 32.075786, 118.749008 11874 3207 972 449 118.74379378567505 32.077826915889425
-
+    // 回龙桥 32.07456, 118.75767 11875 3207 973 448 118.75245042125704 32.07659639777875
+    // 虎踞北路 工商银行 据公司1500M 32.06473, 118.75680 11875 3206 973 447 118.75158042125702 32.06676207073333
+    // 陆田家 竹林新村 32.069552, 118.766955 11876 3206 973 447 118.76173542125701 32.07158396358999
+    // 德基广场 32.04317, 118.78509 11878 3204 971 449 118.77988115009305 32.04521164369418
     public static void main(String[] args) throws IOException {
         // x y 32.076566,118.747892
         // 11874:3207:972:449
         // fix1 118.75310621432493 32.07452505596113
         // fix2 118.74267778567503 32.078606898476124
-        double lng = 118.749008;
-        double lat = 32.075786;
+        double lng = 118.78509;
+        double lat = 32.04317;
         // double lngS = lngToPixel(lng, 18) + 972;
         // System.out.println("lngS:" + lngS);
         // double lngs = pixelToLng(lngS, 18);
@@ -94,7 +97,7 @@ public class MapOffset {
         // System.out.println("lngx:" + lngx);
         // System.out.println(lngs + " " + lngx);
 
-        double lngS = lngToPixel(lng, 18) - 972;
+        double lngS = lngToPixel(lng, 18) - 971;
         System.out.println("lngS:" + lngS);
         double lngs = pixelToLng(lngS, 18);
         System.out.println("lngs:" + lngs);
