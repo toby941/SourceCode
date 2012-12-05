@@ -15,6 +15,10 @@ import org.apache.http.impl.client.DefaultHttpClient;
 import org.apache.http.util.EntityUtils;
 import org.apache.log4j.Logger;
 
+import com.sourcecode.util.NumberUtils;
+
+import de.brendamour.jpasskit.PKLocation;
+
 /**
  * 对google地图修正
  * 
@@ -109,6 +113,22 @@ public class MapOffset {
         // String path = "D:\\Dropbox\\doc\\mitian\\dev\\passbook\\google地图偏移精度5米.txt";
         // readToDB(path);
 
+    }
+
+    public PKLocation fixLocationOffset(PKLocation location, Integer offsetLng, Integer offsetLat) {
+        Double lat = location.getLatitude();
+        Double lng = location.getLongitude();
+        Integer latInteger = ((Double) (lat * 100)).intValue();
+        Integer lngInteger = ((Double) (lng * 100)).intValue();
+        double pixelLng = lngToPixel(lng, 18) - offsetLng;
+        double fixedLng = pixelToLng(pixelLng, 18);
+
+        Double pixelLat = latToPixel(lat, 18) - offsetLat;
+        Double fixedLat = pixelToLat(pixelLat, 18);
+        location.setLongitude(NumberUtils.setDoubleScale(fixedLng, 6));
+        location.setLatitude(NumberUtils.setDoubleScale(fixedLat, 6));
+
+        return location;
     }
 
     // 经度到像素X值
