@@ -26,7 +26,7 @@ public class ApiHttpTest {
         nameValuePairs.add(new BasicNameValuePair("mt_appcode", Des3.ens("3826ae3b-33af-4de8-9762-70be7a160aa4")));
         nameValuePairs.add(new BasicNameValuePair("mt_sid", Des3.ens("1123444")));
         nameValuePairs.add(new BasicNameValuePair("mt_mac", Des3.ens("84-2B-2B-91-AC-64")));
-        nameValuePairs.add(new BasicNameValuePair("shop_user_id", "676406584"));
+        nameValuePairs.add(new BasicNameValuePair("shop_user_id", "64421381"));
         HttpPost httpPost = new HttpPost(url);
         httpPost.setEntity(new UrlEncodedFormEntity(nameValuePairs, "UTF-8"));
 

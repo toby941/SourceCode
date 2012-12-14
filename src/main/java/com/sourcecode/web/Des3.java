@@ -12,26 +12,30 @@ import javax.crypto.NoSuchPaddingException;
 import javax.crypto.SecretKeyFactory;
 import javax.crypto.spec.DESedeKeySpec;
 
-class Des3 {
+public class Des3 {
 
     protected static String des(String data) {
         String result = null;
         try {
-            byte[] en = ees3DecodeECB("d50d2de4fd5ac018e9c1683ae5eff41f".getBytes(), Base64.decode(data.replace("-", "+").replace("_", "/")));
+            byte[] en =
+                    ees3DecodeECB("d50d2de4fd5ac018e9c1683ae5eff41f".getBytes(),
+                            Base64.decode(data.replace("-", "+").replace("_", "/")));
 
             result = new String(en, "UTF-8");
-        } catch (Exception e) {
+        }
+        catch (Exception e) {
             return null;
         }
         return result;
     }
 
-    protected static String ens(String data) {
+    public static String ens(String data) {
         String result = null;
         try {
             byte[] en = des3EncodeECB("d50d2de4fd5ac018e9c1683ae5eff41f".getBytes(), data.getBytes());
             result = new String(Base64.encode(en));
-        } catch (Exception e) {
+        }
+        catch (Exception e) {
             return null;
         }
         return result;
@@ -47,17 +51,23 @@ class Des3 {
             Cipher cipher = Cipher.getInstance("desede" + "/ECB/PKCS5Padding");
             cipher.init(Cipher.ENCRYPT_MODE, deskey);
             bOut = cipher.doFinal(data);
-        } catch (IllegalBlockSizeException e) {
+        }
+        catch (IllegalBlockSizeException e) {
             bOut = null;
-        } catch (InvalidKeyException e) {
+        }
+        catch (InvalidKeyException e) {
             bOut = null;
-        } catch (NoSuchAlgorithmException e) {
+        }
+        catch (NoSuchAlgorithmException e) {
             bOut = null;
-        } catch (InvalidKeySpecException e) {
+        }
+        catch (InvalidKeySpecException e) {
             bOut = null;
-        } catch (BadPaddingException e) {
+        }
+        catch (BadPaddingException e) {
             bOut = null;
-        } catch (NoSuchPaddingException e) {
+        }
+        catch (NoSuchPaddingException e) {
             bOut = null;
         }
         return bOut;
@@ -73,17 +83,23 @@ class Des3 {
             Cipher cipher = Cipher.getInstance("desede" + "/ECB/PKCS5Padding");
             cipher.init(Cipher.DECRYPT_MODE, deskey);
             bOut = cipher.doFinal(data);
-        } catch (IllegalBlockSizeException e) {
+        }
+        catch (IllegalBlockSizeException e) {
             bOut = null;
-        } catch (InvalidKeyException e) {
+        }
+        catch (InvalidKeyException e) {
             bOut = null;
-        } catch (NoSuchAlgorithmException e) {
+        }
+        catch (NoSuchAlgorithmException e) {
             bOut = null;
-        } catch (InvalidKeySpecException e) {
+        }
+        catch (InvalidKeySpecException e) {
             bOut = null;
-        } catch (BadPaddingException e) {
+        }
+        catch (BadPaddingException e) {
             bOut = null;
-        } catch (NoSuchPaddingException e) {
+        }
+        catch (NoSuchPaddingException e) {
             bOut = null;
         }
         return bOut;
