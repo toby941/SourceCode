@@ -5,18 +5,21 @@
 <title></title>
 <style type="text/css">
 /*reset*/
-body{background:#fff;font:12px/1.6 tahoma,arial,\5b8b\4f53,sans-serif;color:#666}
+body{background:#fff;font:12px/1.8 tahoma,arial,\5b8b\4f53,sans-serif;color:#666}
 body,h1,h2,h3,h4,h5,h6,hr,p,th,td{margin:0;padding:0}
-td,th{font-size:12px}
-h1{font-size:14px;margin-bottom:10px}
+td,th{font-size:14px}
+h1{font-size:14px;margin-bottom:10px;color:#333}
 h2{font-size:14px;margin:10px 0 5px 0}
 h3{font-size:12px;margin:5px 0}
 h4{background:#f2f2f2;margin:5px 0; padding:2px 5px}
-a:link,a:visited{color:#1cb3b9;text-decoration:none}
+a:link,a:visited{color:#00b4b9;text-decoration:none}
 a:hover{color:#31babf;text-decoration:underline}
+ul{margin-top:0; padding-top:0}
+li{ margin-bottom:15px}
 img{border:0}
 p{margin:10px 0}
-hr{background:#666;color:#666;margin:20px 0}
+dd{padding-bottom:20px;font-size:12px}
+hr{background:#dbdbdb;color:#dbdbdb;margin:20px 0}
 body {background:#e3e3e3}
 table{border-collapse:collapse;border-spacing:0}
 </style>
@@ -25,26 +28,71 @@ table{border-collapse:collapse;border-spacing:0}
 <body>
 <table width="600" border="0" align="center" cellpadding="0" cellspacing="0" style="margin:auto;">
   <tr>
-    <td><img src="http://www.airad.com/images/email/121105/top.jpg" alt="airAD大气创媒 开放日" width="600" height="379" /></td>
+    <td colspan="2" style="padding:20px 0 15px 20px"><a href="http://www.airAD.com" target="_blank"><img src="http://www.airad.com/images/email/121220/logo.gif" alt="airAD大气创媒" width="151" height="29" /></a></td>
   </tr>
   <tr>
-    <td style="background:#fff;padding:10px 30px 30px 30px">
-    <h2>尊敬的${username}：</h2>
-      <h2>您好！</h2>
-      <p>airAD大气创媒 一直致力于提供最优质的移动互联网营销服务，我们时刻关注您的想法和意见。</p>
-      <p>在移动互联网飞速发展的今天，智能手机等移动平台上的营销模式已凸显其不可忽视的力量。airAD大气创媒特此组织此次开放日活动，意在与大家一同探讨移动营销发展的新思路，相互交流，增进了解。</p>
-      <p>本次开放日定于 <strong style="color:#00b4b9">2012年11月25日星期日 14:00 在本公司内</strong> 进行，真诚期盼您的光临！</p>
-    <p>让我们同叙友谊，共话未来，共同探索互赢之路！</p>
-    <hr />
-    <p><strong>地址：</strong>南京市鼓楼区察哈尔路华严岗1号 智慧谷科技园（原南京市旅游学校）A座8楼<br />
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;米田科技有限公司</p>
-<p><img src="http://www.airad.com/images/email/121105/maps.jpg" width="535" height="470" /></p>
-<p><strong>交通指南：</strong>您可乘 <strong style="color:#00b4b9">游4、21、66、67、131、132、172至 丁山宾馆，或 143、149至 华严岗门站</strong> 下车。如果打车，建议上车后请司机送至 <strong style="color:#00b4b9">丁山宾馆</strong> 附近，<strong style="color:#00b4b9">原南京旅游学校</strong> 即可。</p>
+    <td colspan="2"><img src="http://www.airad.com/images/email/121220/intro.jpg" alt="高速增长的无限（线）空间——移动市场" width="600" height="200" /></td>
+  </tr>
+  <tr>
+    <td colspan="2" style="background:#fff;padding:15px 25px 0 25px">
+<h1>智慧树——打造企业级移动营销套件</h1>
+<p>随着移动互联网的发展，APP这样一个名词已经在不知不觉中融入到了我们的生活。移动互联网的尝试对商家来说是一种思维模式的变换，移动互联网的创造性和互动便捷性为商家提供了在经营模式中的突破点。</p>
+<p>11月底，airAD大气创媒邀请了各界嘉宾来参加首次的开放日活动。活动围绕移动互联网，进行了信息的分享和交流。airAD大气创媒市场部经理郭远向嘉宾们介绍了移动互联网的普及和营销；CEO陆田通过介绍具体app应用以及广告的案例，向大家介绍了移动互联网营销中的所采用的理念和多种技术，还就苹果推出的，基于地理位置信息等技术，可联合商家对消费者推送会员卡，优惠券等全方位营销信息的Passbook，进行了深入的讨论，与会成员产生了浓厚的兴趣，并进行了深入交流。</p>
+<div><img src="http://www.airad.com/images/email/121220/news.jpg" alt="开放日现场" width="543" height="141" /></div>
+<p>airAD大气创媒的"开放日"活动还将继续，会有更多与移动互联网营销，移动互联网在生活中的渗透于延伸的主题，期待您的参与。</p>
+<p>移动互联网就在我们身边，融入我们的生活，更加可以为我们的营销活动服务。了解移动互联网，使移动互联网成为市场营销的有效供工具与渠道是我们努力的目标！</p>
+<p>欢迎关注我们的微博：<a href="http://e.weibo.com/airAD?utm_source=121220w&utm_medium=email&utm_content=1&utm_campaign=monthmail" target="_blank">http://e.weibo.com/airAD</a></p>
+<hr />
+<h1>案例展示</h1>
+<table width="550" border="0" cellspacing="0" cellpadding="0">
+  <tr>
+    <td width="102" style="vertical-align:top;padding-bottom:20px"><img src="http://www.airad.com/images/email/121220/ico_1.gif" alt="星巴克" width="102" height="102" /></td>
+    <td width="428" style="vertical-align:top;padding-left:20px">
+    <h1>星巴克&quot;早安闹钟&quot;</h1>
+    <p style="font-size:12px; color:#999999">10月8日，星巴克在中国推出了"早安闹钟"。用户下载星巴克中国APP，设定起床闹铃(最晚为上午9点)。闹铃响起后的一小时内，走进任意一家星巴克门店，就能在购买正价咖啡的同时，享受早餐新品半价的优惠。</p>
     </td>
   </tr>
+</table>
+<div style="text-align:center"><img src="http://www.airad.com/images/email/121220/case_1.jpg" alt=" " width="532" height="321" />
+ </div>
+<ul>
+<li>星巴克售卖的不仅是咖啡，更是一种顾客体验和生活方式；</li>
+<li>巧妙地将APP和我们日常的生活紧密结合，小小的奖励不仅可以促进早餐的销售，更可以帮助消费者培养良好生活习惯为切入点；</li>
+<li>与其说"早安闹钟"是配合星巴克10月上市早餐新品的推广活动之一，倒不如说是星巴克的企业文化与移动端的新营销模式深度融合，也为APP留住了最为关键的要素——用户；</li>
+<li>移动互联网的尝试对商家来说是一种思维模式的变换，移动互联网的创造性和互动便捷性为商家提供了在O2O的经营模式中的突破点。</li>
+</ul>
+<hr />
+<table width="550" border="0" cellspacing="0" cellpadding="0">
   <tr>
-    <td style="text-align:center;padding:5px 30px 30px 30px">&copy; 2011-2012 南京米田科技有限公司 版权所有</td>
+    <td width="102" style="vertical-align:top"><img src="http://www.airad.com/images/email/121220/ico_2.gif" alt="星巴克" width="102" height="102" /></td>
+    <td width="428" style="vertical-align:top;padding-left:20px">
+    <h1>杜蕾斯&quot;宝贝计划&quot;</h1>
+    <p style="font-size:12px; color:#999999">两部手机都同时装上了这款APP，只需相互蹭蹭，便能在手机里生养出"电子宝宝"，这个宝宝会哭、会饿、会闹、会心情不好，还会生病，需要你的关心呵护，晚上睡觉时还可能被他的哭声吵醒。怎样，若你烦了，你就求助于杜蕾斯的包装吧，只需要用手机摄像头扫描二维码，系统便会为你启动Baby防打扰模式，从而远离电子Baby带给你的困扰。</p>
+    </td>
   </tr>
 </table>
+<div style="text-align:center"><img src="http://www.airad.com/images/email/121220/case_2.jpg" alt="杜蕾斯" width="532" height="321" />
+ </div>
+<ul>
+<li>利用移动互联网提供的趣味互动和时时跟随的特点，迅速地将APP传播开来。</li>
+<li>产品价值和功能地成功植入，使整个游戏无时无刻不在提醒你杜蕾斯的重要性。</li>
+<li>通过更富有新意的营销手段，创造出新一轮的炒作话题，借以继续培养与目标消费者的品牌感情。</li>
+<li>据统计，在google上搜索"杜蕾斯宝贝计划"，获得约25000条结果。在百度上搜索"杜蕾斯宝贝计划"，获得约13000条相关结果。在优酷上，杜蕾斯宝贝计划的视频点击量超过1000000。</li>
+</ul>
+<hr />
+</td>
+  </tr>
+<tr>
+<td style="background:#fff;padding:0 25px 40px 25px; border-bottom:4px solid #00b4b9">
+<h1>联系我们</h1>
+服务电话：400-888-5377<br />
+电子邮箱：<a href="mailto:contact@airAD.com">contact@airAD.com</a></td>
+<td style="background:#fff;padding:15px 25px 40px 0;border-bottom:4px solid #00b4b9;text-align:right"><a href="http://www.airad.com/wisdomtree.html?utm_source=121220&utm_medium=email&utm_campaign=monthmail" target="_blank"><img src="http://www.airAD.com/images/email/121120/more.gif" alt="了解详细" width="165" height="48" /></a></td>
+  </tr>
+<tr>
+  <td colspan="2" style=" text-align:center;font-size:12px;padding:10px 0 40px 0">&copy; 2011-2012 南京米田科技有限公司 版权所有</td>
+</tr>
+</table>
+<img src="http://data.airad.com/client.gif?t=email&k=emms20121220"/> 
 </body>
 </html>

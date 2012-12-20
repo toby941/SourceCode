@@ -14,7 +14,7 @@ public class EmailSend {
         String usernameTrim = StringUtils.trimToEmpty(username);
         String mailTrim = StringUtils.trimToEmpty(mail);
         String text = mailComponent.merge("com/sourcecode/web/mail.vm", "username", usernameTrim);
-        Email email = new Email(mailTrim, "contact@airad.com", "大气创媒开放日邀请函", text, true);
+        Email email = new Email(mailTrim, "contact@airad.com", "大气创媒2012-12月", text, true);
         email.setPersonal("大气创媒");
         mailComponent.sendSingleMail(email);
     }
