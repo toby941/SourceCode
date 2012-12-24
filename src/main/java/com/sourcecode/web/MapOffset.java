@@ -113,6 +113,7 @@ public class MapOffset {
         // String path = "D:\\Dropbox\\doc\\mitian\\dev\\passbook\\google地图偏移精度5米.txt";
         // readToDB(path);
 
+        baiduToGoogle();
     }
 
     public PKLocation fixLocationOffset(PKLocation location, Integer offsetLng, Integer offsetLat) {
@@ -183,5 +184,18 @@ public class MapOffset {
         }
         read.close();
         writer.close();
+    }
+
+    /**
+     * double logdeviation = 1.0000568461567492425578691530827;//经度偏差<br>
+     * double latdeviation = 1.0002012762190961772159526495686;//纬度偏差<br>
+     * google地图坐标=百度坐标*经验值
+     */
+    public static void baiduToGoogle() {
+        String log = "118.79065";
+        String lat = "32.042509";
+        double googleLog = Double.parseDouble(log) * 1.0000568461567492425578691530827;
+        double googleLat = Double.parseDouble(lat) * 1.0002012762190961772159526495686;
+        System.out.println("log:" + googleLog + " lat:" + googleLat);
     }
 }

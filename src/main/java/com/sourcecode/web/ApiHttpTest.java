@@ -63,10 +63,12 @@ public class ApiHttpTest {
 
     public static void main(String[] args) throws ClientProtocolException, IOException {
         // 德基广场 32.04317, 118.78509 11878 3204 971 449 118.77988115009305 32.04521164369418
-        String host = "http://192.168.1.13:9091/passapi/mapoffset";
+        // String host = "http://192.168.1.13:9091/passapi/mapoffset";
+        String host = "http://emms.airad.com/passapi/mapoffset";
+        // 1,5
         Map<String, String> params = new HashMap<String, String>();
-        params.put("lng", "118.78509");
-        params.put("lat", "32.04317");
+        params.put("lng", "118.79054");
+        params.put("lat", "32.03858");
         String response = doRequest(host, params);
         System.out.println(response);
     }
