@@ -5,6 +5,8 @@ import java.io.RandomAccessFile;
 import java.text.MessageFormat;
 import java.text.ParseException;
 
+import net.sf.json.JSONObject;
+
 import org.apache.commons.lang.StringUtils;
 import org.apache.commons.lang.builder.ReflectionToStringBuilder;
 import org.apache.http.HttpResponse;
@@ -14,6 +16,8 @@ import org.apache.http.client.methods.HttpGet;
 import org.apache.http.impl.client.DefaultHttpClient;
 import org.apache.http.util.EntityUtils;
 import org.apache.log4j.Logger;
+
+import sun.misc.BASE64Decoder;
 
 import com.sourcecode.util.NumberUtils;
 
@@ -40,6 +44,29 @@ public class MapOffset {
             logger.error("execute map abc error: " + ReflectionToStringBuilder.toString(statusLine));
         }
         return StringUtils.EMPTY;
+    }
+
+    /**
+     * baidu google 真实坐标间转换 http://www.cnblogs.com/foxracle/archive/2012/03/22/2411402.html
+     * 
+     * @param lat
+     * @param lng
+     * @param from 来源坐标系 （0表示原始GPS坐标，2表示Google坐标） 0-真实 2-google 4-baidu坐标
+     * @param to 转换后的坐标 (4就是百度自己啦，好像这个必须是4才行）
+     * @throws IOException
+     * @throws ParseException
+     */
+    public static void trans(String lat, String lng, String from, String to) throws ParseException, IOException {
+        String url_templete = "http://api.map.baidu.com/ag/coord/convert?from={0}&to={1}&x={2}&y={3}";
+        String url = MessageFormat.format(url_templete, from, to, lat, lng);
+        System.out.println(url);
+        String jsonStr = executeHttpGet(url);
+        System.out.println(jsonStr);
+        JSONObject jsonObject = JSONObject.fromObject(jsonStr);
+        BASE64Decoder decoder = new BASE64Decoder();
+        String transLat = new String(decoder.decodeBuffer(jsonObject.getString("x")));
+        String transLng = new String(decoder.decodeBuffer(jsonObject.getString("y")));
+        System.out.println("x: " + transLat + "  y: " + transLng);
     }
 
     public static boolean getOffset(Double lat, Double lng) {
@@ -84,7 +111,7 @@ public class MapOffset {
     // 虎踞北路 工商银行 据公司1500M 32.06473, 118.75680 11875 3206 973 447 118.75158042125702 32.06676207073333
     // 陆田家 竹林新村 32.069552, 118.766955 11876 3206 973 447 118.76173542125701 32.07158396358999
     // 德基广场 32.04317, 118.78509 11878 3204 971 449 118.77988115009305 32.04521164369418
-    public static void main(String[] args) throws IOException {
+    public static void main(String[] args) throws IOException, ParseException {
         // x y 32.076566,118.747892
         // 11874:3207:972:449
         // fix1 118.75310621432493 32.07452505596113
@@ -112,8 +139,10 @@ public class MapOffset {
         System.out.println(lngs + " " + lngx);
         // String path = "D:\\Dropbox\\doc\\mitian\\dev\\passbook\\google地图偏移精度5米.txt";
         // readToDB(path);
-
+        // baidu x: 118.75460213199 y: 32.082138444471
+        // google 118.747996 32.076459
         baiduToGoogle();
+        trans("118.75460213199", "32.082138444471", "2", "4");
     }
 
     public PKLocation fixLocationOffset(PKLocation location, Integer offsetLng, Integer offsetLat) {
