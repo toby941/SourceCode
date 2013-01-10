@@ -10,8 +10,12 @@ import java.util.List;
 import java.util.Map;
 
 import net.sf.json.JSONArray;
+import net.sf.json.JSONObject;
+import net.sf.json.JsonConfig;
+import net.sf.json.util.PropertyFilter;
 
 import org.apache.commons.io.IOUtils;
+import org.apache.commons.lang3.StringUtils;
 
 public class JsonUtils {
 
@@ -40,6 +44,22 @@ public class JsonUtils {
         JSONArray jsonArray = JSONArray.fromObject(collection);
         System.out.println(jsonArray.toString());
         return null;
+    }
+
+    /**
+     * 对于bean的value为null或空 不输出
+     */
+    public void filterEmpty() {
+        JsonConfig jsonConfig = new JsonConfig();
+        jsonConfig.setJsonPropertyFilter(new PropertyFilter() {
+
+            @Override
+            public boolean apply(Object source/* 属性的拥有者 */, String name /* 属性名字 */, Object value/* 属性值 */) {
+                // return true to skip name
+                return value == null || StringUtils.isEmpty(value.toString());
+            }
+        });
+        JSONObject jsonObject = JSONObject.fromObject(null, jsonConfig);
     }
 
     public static void main(String[] args) throws FileNotFoundException, IOException {

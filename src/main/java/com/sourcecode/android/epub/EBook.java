@@ -62,19 +62,22 @@ public class EBook {
         }
     }
 
-    private static void logTableOfContents(List<TOCReference> tocReferences, int depth) {
+    private static void logTableOfContents(List<TOCReference> tocReferences, int depth) throws IOException {
         if (tocReferences == null) {
             return;
         }
-        for (TOCReference tocReference : tocReferences) {
+        for (int i = 0; i < tocReferences.size() && i < 1; i++) {
+            TOCReference tocReference = tocReferences.get(i);
             StringBuilder tocString = new StringBuilder();
-            for (int i = 0; i < depth; i++) {
+            for (int j = 0; j < depth; j++) {
                 tocString.append("\t");
             }
+            byte[] data = tocReference.getResource().getData();
+            System.out.println(new String(data, 0, 1400));
             tocString.append(tocReference.getTitle() + " " + tocReference.getCompleteHref());
             System.out.println(tocString.toString());
 
-            // logTableOfContents(tocReference.getChildren(), depth + 1);
+            logTableOfContents(tocReference.getChildren(), depth + 1);
         }
     }
 
