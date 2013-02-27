@@ -42,8 +42,10 @@ public class ApiHttpTest {
         HttpClient httpclient = new DefaultHttpClient();
 
         List<NameValuePair> nameValuePairs = new ArrayList<NameValuePair>();
-        for (String key : params.keySet()) {
-            nameValuePairs.add(new BasicNameValuePair(key, params.get(key)));
+        if (params != null) {
+            for (String key : params.keySet()) {
+                nameValuePairs.add(new BasicNameValuePair(key, params.get(key)));
+            }
         }
         HttpPost httpPost = new HttpPost(url);
         httpPost.setEntity(new UrlEncodedFormEntity(nameValuePairs, "UTF-8"));
@@ -57,9 +59,10 @@ public class ApiHttpTest {
         HttpClient httpclient = new DefaultHttpClient();
         // 387e54d7-ae2f-4ce7-aff6-b166b16cd844 测试新街口ios
         // 3826ae3b-33af-4de8-9762-70be7a160aa4
+        // 62618f99-0990-4adb-a25e-cfc0fb967ec2 only photo
         HttpGet httpGet = new HttpGet(url);
 
-        httpGet.addHeader("mt-appcode", "bab68d02-e360-4531-a2a1-9626419450ee");
+        httpGet.addHeader("mt-appcode", "62618f99-0990-4adb-a25e-cfc0fb967ec2");
 
         HttpResponse response = httpclient.execute(httpGet);
         return EntityUtils.toString(response.getEntity());
@@ -82,8 +85,10 @@ public class ApiHttpTest {
         // String host = "http://192.168.1.13:9091/passapi/qrcode/ads";
         // String host = "http://emms.airad.com/passapi/mapoffset";
         // String host = "http://192.168.1.247:8860/api/passbook";
-        String host = "http://192.168.1.247:8860/api/xinjiekou/parking-lots";
+        // parking-lots bus-lines toilets
+        // String host = "http://emms.airad.com/api/xinjiekou/parking-lots";
         // String host = "http://192.168.1.247:8860/api/passbook";
+        String host = "http://emms.airad.com/api/about_us";
         // 1,5
         String response = doGetRequest(host);
         System.out.println(response);

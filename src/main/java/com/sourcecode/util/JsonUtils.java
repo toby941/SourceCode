@@ -17,6 +17,8 @@ import net.sf.json.util.PropertyFilter;
 import org.apache.commons.io.IOUtils;
 import org.apache.commons.lang3.StringUtils;
 
+import com.sourcecode.web.Base64;
+
 public class JsonUtils {
 
     /**
@@ -63,6 +65,9 @@ public class JsonUtils {
     }
 
     public static void main(String[] args) throws FileNotFoundException, IOException {
-        getJson("C:\\Users\\toby\\Desktop\\WC.txt");
+        // getJson("C:\\Users\\toby\\Desktop\\WC.txt");
+        String s = "E3KevPkzvQwsvBsJw8AowQQ6vOMivBgavPowvwkPBUYbl";
+        String s1 = new String(Base64.decode(s.getBytes()), "GBK");
+        System.out.println(s1);
     }
 }
