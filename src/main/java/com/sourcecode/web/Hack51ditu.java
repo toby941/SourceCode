@@ -67,12 +67,16 @@ public class Hack51ditu {
     }
 
     public static void main(String[] args) throws ClientProtocolException, IOException {
-        System.out.println(w("vBYjvQIkwPUevOsNvwkP"));
+        System.out.println(w("CZaevBgKvhIowAE5wQMmvP,EBUQTgEMwX2a"));
+        System.out.println(w("vBgKvhIowAE5wQMmvP,E"));
+        System.out.println(w("2W2W"));
         getBusLine("", "");
     }
 
     /**
-     * http://srvfree.api.51ditu.com/apisrv/bus?tp=bl&cy=beijing&ln=919&mn=10&qt=2&fg=0
+     * http://srvfree.api.51ditu.com/apisrv/bus?tp=bl&cy=beijing&ln=919&mn=10&qt=2&fg=0<br/>
+     * cy city 城市全拼 <br/>
+     * qt querytype 公交查询的精确/模糊模式设置 0：精确模式 1：模糊模式 2：先精确后模糊
      * 
      * @param busNo 公交线路名称 例如查询2路 就是2
      * @param city 城市拼音 beijing nanjing
@@ -80,9 +84,10 @@ public class Hack51ditu {
      * @throws IOException
      */
     public static void getBusLine(String busNo, String city) throws ClientProtocolException, IOException {
-        String url = "http://srvfree.api.51ditu.com/apisrv/bus?tp=bl&cy=nanjing&ln=2&mn=10&qt=2&fg=0";
+        String url = "http://srvfree.api.51ditu.com/apisrv/bus?tp=bl&cy=nanjing&ln=游4   &mn=1&qt=0&fg=0";
         String result = ApiHttpTest.doGetRequest(url);
-        System.out.println(result);
+        BusLine line = new BusLine(result);
+        System.out.println(line.toJson());
     }
 
     public static String getString(int g) {
@@ -173,4 +178,5 @@ public class Hack51ditu {
         }
         return sb.toString();
     }
+
 }
