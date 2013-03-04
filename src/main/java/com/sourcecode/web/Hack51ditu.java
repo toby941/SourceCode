@@ -1,7 +1,11 @@
 package com.sourcecode.web;
 
 import java.io.IOException;
+import java.text.MessageFormat;
 
+import net.sf.json.JSONObject;
+
+import org.apache.commons.lang.StringUtils;
 import org.apache.http.client.ClientProtocolException;
 
 /**
@@ -73,21 +77,37 @@ public class Hack51ditu {
         getBusLine("", "");
     }
 
+    public static final String BUS_LINE_URL =
+            "http://srvfree.api.51ditu.com/apisrv/bus?tp=bl&cy=nanjing&ln={0}&mn=1&qt=0&fg=0";
+    public static final String BUS_STATION_URL =
+            "http://srvfree.api.51ditu.com/apisrv/bus?tp=bs&cy=nanjing&sn={0}&mn=10&qt=0&fg=0";
+
     /**
      * http://srvfree.api.51ditu.com/apisrv/bus?tp=bl&cy=beijing&ln=919&mn=10&qt=2&fg=0<br/>
      * cy city 城市全拼 <br/>
      * qt querytype 公交查询的精确/模糊模式设置 0：精确模式 1：模糊模式 2：先精确后模糊
      * 
-     * @param busNo 公交线路名称 例如查询2路 就是2
-     * @param city 城市拼音 beijing nanjing
+     * @param query 公交线路名称 例如查询2路 就是2
+     * @param type 0-查询线路信息 1-查询站点信息
      * @throws ClientProtocolException
      * @throws IOException
      */
-    public static void getBusLine(String busNo, String city) throws ClientProtocolException, IOException {
-        String url = "http://srvfree.api.51ditu.com/apisrv/bus?tp=bl&cy=nanjing&ln=游4   &mn=1&qt=0&fg=0";
+    public static JSONObject getBusLine(String query, String type) throws ClientProtocolException, IOException {
+        String apiUrl = StringUtils.EMPTY;
+        if ("0".equals(type)) {
+            apiUrl = BUS_LINE_URL;
+        }
+        else if ("1".equals(type)) {
+            apiUrl = BUS_STATION_URL;
+        }
+        else {
+            return new JSONObject();
+        }
+        String url = MessageFormat.format(apiUrl, query);
+
         String result = ApiHttpTest.doGetRequest(url);
         BusLine line = new BusLine(result);
-        System.out.println(line.toJson());
+        return line.toJson();
     }
 
     public static String getString(int g) {

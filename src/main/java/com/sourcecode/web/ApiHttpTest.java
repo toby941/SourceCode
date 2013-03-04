@@ -2,6 +2,7 @@ package com.sourcecode.web;
 
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
@@ -61,7 +62,6 @@ public class ApiHttpTest {
         // 3826ae3b-33af-4de8-9762-70be7a160aa4
         // 62618f99-0990-4adb-a25e-cfc0fb967ec2 only photo
         HttpGet httpGet = new HttpGet(url);
-
         httpGet.addHeader("mt-appcode", "62618f99-0990-4adb-a25e-cfc0fb967ec2");
 
         HttpResponse response = httpclient.execute(httpGet);
@@ -88,10 +88,11 @@ public class ApiHttpTest {
         // parking-lots bus-lines toilets
         // String host = "http://emms.airad.com/api/xinjiekou/parking-lots";
         // String host = "http://192.168.1.247:8860/api/passbook";
-        String host = "http://emms.airad.com/api/about_us";
-        // 1,5
-        String response = doGetRequest(host);
+        // String host = "http://emms.airad.com/api/about_us";
+        String host = "http://192.168.1.247:8860/api/xinjiekou/searchbus";
+        HashMap<String, String> param = new HashMap<String, String>();
+        param.put("busno", "游4");
+        String response = doRequest(host, param);
         System.out.println(response);
     }
-
 }

@@ -6,6 +6,8 @@ import java.util.List;
 import net.sf.json.JSONArray;
 import net.sf.json.JSONObject;
 
+import org.apache.commons.lang.StringUtils;
+
 import com.sourcecode.util.JsonBuildUtils;
 
 public class BusLine {
@@ -18,21 +20,28 @@ public class BusLine {
         int end = response.lastIndexOf(";");
         String json = response.substring(begin, end);
         JSONObject j = JSONObject.fromObject(json);
-        JSONObject metadataJson = j.getJSONArray("c").getJSONObject(0);
-        name = Hack51ditu.w(metadataJson.getJSONObject("a").getString("name"));
-        JSONArray stationJson = metadataJson.getJSONArray("c");
-        station = new ArrayList<String>();
-        for (int i = 0; i < stationJson.size(); i++) {
-            station.add(Hack51ditu.w(stationJson.getJSONObject(i).getJSONObject("a").getString("name")));
+        JSONArray dataJson = j.getJSONArray("c");
+        if (dataJson.size() > 0) {
+            JSONObject metadataJson = dataJson.getJSONObject(0);
+            name = Hack51ditu.w(metadataJson.getJSONObject("a").getString("name"));
+            JSONArray stationJson = metadataJson.getJSONArray("c");
+            station = new ArrayList<String>();
+            for (int i = 0; i < stationJson.size(); i++) {
+                station.add(Hack51ditu.w(stationJson.getJSONObject(i).getJSONObject("a").getString("name")));
+            }
+        }
+        else {
+            name = StringUtils.EMPTY;
+            station = new ArrayList<String>();
         }
     }
 
-    public String toJson() {
+    public JSONObject toJson() {
         JSONArray stations = JsonBuildUtils.buildJsonTrimEmpty(station);
         JSONObject resultJson = new JSONObject();
         resultJson.accumulate("name", name);
         resultJson.accumulate("station", stations);
-        return resultJson.toString();
+        return resultJson;
     }
 
     @Override
