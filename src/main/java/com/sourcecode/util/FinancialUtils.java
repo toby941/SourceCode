@@ -1,4 +1,4 @@
-package com.mitian.emms.util;
+package com.sourcecode.util;
 
 import java.io.IOException;
 import java.util.HashMap;

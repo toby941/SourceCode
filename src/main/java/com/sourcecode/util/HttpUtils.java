@@ -59,7 +59,7 @@ public class HttpUtils {
         HttpPost httpPost = new HttpPost(url);
         HttpEntity entity =
                 new StringEntity(
-                        "<xml><ToUserName><![CDATA[toUser]]></ToUserName><FromUserName><![CDATA[fromUser]]></FromUserName> <CreateTime>1348831860</CreateTime><MsgType><![CDATA[text]]></MsgType><Content><![CDATA[this is a test]]></Content><MsgId>1234567890123456</MsgId></xml>");
+                        "<xml><ToUserName><![CDATA[toby941]]></ToUserName><FromUserName><![CDATA[fromUser]]></FromUserName> <CreateTime>1348831860</CreateTime><MsgType><![CDATA[text]]></MsgType><Content><![CDATA[南京]]></Content><MsgId>1234567890123456</MsgId></xml>");
         httpPost.setEntity(entity);
         HttpResponse response = httpclient.execute(httpPost);
         return EntityUtils.toString(response.getEntity());
@@ -67,7 +67,8 @@ public class HttpUtils {
 
     public static void main(String[] args) throws IOException {
         // String url = "http://img6.cache.netease.com/cnews/2012/11/6/20121106100038534e0.jpg";
-        String url = "http://127.0.0.1:9091/api/wx";
+        // String url = "http://127.0.0.1:9091/api/wx";
+        String url = "http://weimp.sinaapp.com/api/wx";
         // byte[] content = getResponse(url);
         // FileUtils.writeByteArrayToFile(new File("D:\\tmp\\xxx.png"), content);
         System.out.println(doPostRequest(url));
