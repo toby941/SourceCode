@@ -56,19 +56,6 @@ public class ImageDomain {
         imgHeight = imgBuff.getHeight(null);
     }
 
-    public static void main(String[] args) throws IOException {
-        // BufferedImage image = ImageIO.read(new File("D://car.jpg"));
-        // System.out.println(image.getHeight());
-        // System.out.println(image.getWidth());
-        // File input = new File("D://1.gif");
-        // BufferedImage images = ImageIO.read(input);
-        // File output = new File("D://11.jpg");
-        // ImageIO.write(images, "jpg", output);
-
-        File f = new File("D://11.jpg");
-        System.out.println(getFormatName(f));
-    }
-
     // Returns the format name of the image in the object 'o'.
     // Returns null if the format is not known.
     private static String getFormatName(Object o) {
@@ -88,7 +75,8 @@ public class ImageDomain {
             iis.close();
             // Return the format name
             return reader.getFormatName();
-        } catch (IOException e) {
+        }
+        catch (IOException e) {
             //
         }
 
@@ -111,10 +99,12 @@ public class ImageDomain {
         if (modality == 0) {
             if (imgWidth >= imgHeight) {
                 h = (int) Math.round((imgHeight * w * 1.0 / imgWidth));
-            } else {
+            }
+            else {
                 w = (int) Math.round((imgWidth * h * 1.0 / imgHeight));
             }
-        } else if (modality == 1) {
+        }
+        else if (modality == 1) {
             h = (int) Math.round((imgHeight * w * 1.0 / imgWidth));
         }
 
