@@ -47,9 +47,9 @@ public interface BasicAPI {
      * ,"commenttime":"20130818090000","commentconent":"评论内容2" } ] } }
      * 
      * @param cepid
-     * @return
+     * @return SelectTheOneCepActive("20130810001","00000001","CHI");
      */
-    public JSONObject SelectTheOneCepActive(String cepid);
+    public JSONObject SelectTheOneCepActive(String cepid, String userid, String ManyLangMark);
 
     /**
      * CEP预约报名<br/>
@@ -120,5 +120,64 @@ public interface BasicAPI {
      * @return
      */
     public JSONObject SignInCepActive(String twobarcode, String userid, String lng, String lat);
+
+    /**
+     * 用户登陆校验 输入参数测试用例：json=basic.UserLogin("00000001", "1236","CHI");
+     * 
+     * @param username
+     * @param password
+     * @param ManyLangMark
+     * @return
+     */
+    public JSONObject UserLogin(String username, String password, String ManyLangMark);
+
+    /**
+     * 修改密码 输入参数测试用例：json=basic.ChangePassword("00000001","1236","1238","1238","ENG");
+     * 
+     * @param userId
+     * @param oldPassword
+     * @param newPassword
+     * @param confimPassword
+     * @param ManyLangMark
+     * @return
+     */
+    public JSONObject ChangePassword(String userId, String oldPassword, String newPassword, String confimPassword,
+            String ManyLangMark);
+
+    public JSONObject SelectAllCepActive(String userid, String ManyLangMark);
+
+    public JSONObject PrecontractSignUpCepActive(String cepid, String userid, String ArrangeId, String ManyLangMark);
+
+    public JSONObject PrecontractCancelCepActive(String cepid, String userid, String ArrangeId, String ManyLangMark);
+
+    // public JSONObject ConfirmCepActive(String cepid,String userid,String ManyLangMark);
+    public JSONObject SelectConfirmCepActive(String userid, String ManyLangMark);
+
+    public JSONObject CepActiveComment(String cepid, String eventid, String userid, String commentcontent,
+            String ManyLangMark);
+
+    public JSONObject SignInCepActive(String twobarcode, String userid, String log, String lat, String ManyLangMark);
+
+    public JSONObject GetWeather(String ManyLangMark);
+
+    public JSONObject GetGameInfo(String userId, String ManyLangMark);
+
+    public JSONObject GetGameDetailInfo(String GameBigType, String GameDate, String ManyLangMark);
+
+    public JSONObject GetGameDetailInfoPlace(String GamePlaceGame, String GameDate, String ManyLangMark);
+
+    public JSONObject getLocation(String ManyLangMark);
+
+    public JSONObject getLocationDetail(String id, String ManyLangMark);
+
+    // DEMO版测试接口
+    /*
+     * public JSONObject SelectAllCepActive(String userid); public JSONObject SelectTheOneCepActive(String cepid,String
+     * userid); public JSONObject PrecontractSignUpCepActive(String cepid,String userid); public JSONObject
+     * PrecontractCancelCepActive(String cepid,String userid); public JSONObject ConfirmCepActive(String cepid,String
+     * userid); public JSONObject SelectConfirmCepActive (String userid); public JSONObject CepActiveComment (String
+     * cepid,String userid,String commentcontent); public JSONObject SignInCepActive(String twobarcode,String
+     * userid,String log,String lat);
+     */
 
 }

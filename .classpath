@@ -23,5 +23,6 @@
 	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
 	<classpathentry kind="lib" path="src/main/resource/lib/epublib-core-latest.jar"/>
 	<classpathentry kind="lib" path="src/main/resource/lib/hessdroid.jar"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.USER_LIBRARY/hadoop"/>
 	<classpathentry kind="output" path="target/classes"/>
 </classpath>
