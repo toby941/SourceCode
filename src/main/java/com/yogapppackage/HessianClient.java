@@ -20,11 +20,19 @@ public class HessianClient {
             factory.setHessian2Reply(false);
             factory.setChunkedPost(false);
             BasicAPI basic = factory.create(BasicAPI.class, url);
-            // JSONObject s = basic.SelectTheOneCepActive("1000101", "00000001", "CHI");
-            JSONObject s = basic.GetGameInfo("20001", "CHI");
+            // JSONObject s = basic.SelectTheOneCepActive("1", "200970", "CHI");
+            // JSONObject s = basic.ConfirmCepActive("1", "200970");
+            // JSONObject s = basic.getLocation("CHI");
+            // JSONObject s = basic.getLocationDetail("CTF", "CHI");
+            // JSONObject s = basic.GetGameDetailInfo("WL", "20130817", "CHI");
+            // JSONObject s = basic.GetGameDetailInfoPlace("IEF", "20130817", "CHI");
+            JSONObject s = basic.SelectConfirmCepActive("200970", "CHI");
+            // JSONObject s = basic.SelectAllCepActive("200970", "CHI");
+            // JSONObject s = basic.GetGameInfo("200970", "CHI");
             // JSONObject s = basic.GetGameDetailInfo("00001", "20130812", "CHI");
-            // JSONObject s = basic.UserLogin("20001", "111111", "CHI");
+            // JSONObject s = basic.UserLogin("200970", "032747", "CHI");
             // JSONObject s = basic.ChangePassword("20001", "032747", "111111", "111111", "CHI");
+            // JSONObject s = basic.SignInCepActive("abcefg", "200030", "199.88", "46.8897", "CHI");
             System.out.println(s.toString());
         }
         catch (MalformedURLException e) {
