@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding= "UTF-8"?>
+<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/"
+       xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" >
+       <soapenv:Body>
+             <ns1:simplePay soapenv:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"
+                   xmlns:ns1="http://compatible.api.seashell.bill99.com" >
+                   <input soapenc:arrayType="ns2:SimpleRequestBean[1]" xsi:type="soapenc:Array"
+                         xmlns:ns2="http://complatible.dto.domain.seashell.bill99.com"
+                         xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" >
+                         <input href="#id0" />
+                   </input>
+                   <username xsi:type="soapenc:string"
+                         xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" >xx</username>
+                   <ip xsi:type="soapenc:string" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" >192.168.1.1</ip>
+             </ns1:simplePay>
+             <multiRef id= "id0" soapenc:root ="0"
+                   soapenv:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"
+                   xsi:type="ns3:SimpleRequestBean" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/"
+                   xmlns:ns3="http://complatible.dto.domain.seashell.bill99.com" >
+                   <amount href="#id1" />
+                   <correctName xsi:type="soapenc:string" >n</correctName>
+                   <creditContact xsi:type="soapenc:string" >toby941@gmail.com</creditContact>
+                   <creditName xsi:type="soapenc:string" >toby</creditName>
+                   <currencyCode xsi:type="soapenc:string" >1</currencyCode>
+                   <description xsi:type="soapenc:string" xsi:nil="true" />
+                   <mac xsi:type="soapenc:string" >SSSSS</mac>
+                   <orderId xsi:type="soapenc:string" >As43445</orderId>
+                   <tempAccount xsi:type="soapenc:string" >y</tempAccount>
+             </multiRef>
+             <multiRef id= "id1" soapenc:root ="0"
+                   soapenv:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"
+                   xsi:type="xsd:double" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" >20.0</multiRef>
+       </soapenv:Body>
+</soapenv:Envelope>

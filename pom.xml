@@ -64,56 +64,6 @@
           <type>pom</type>
       </dependency>
       <dependency>
-          <groupId>org.springframework</groupId>
-          <artifactId>spring-beans</artifactId>
-          <version>3.1.1.RELEASE</version>
-      </dependency>
-      <dependency>
-          <groupId>javax.servlet</groupId>
-          <artifactId>servlet-api</artifactId>
-          <version>3.0-alpha-1</version>
-      </dependency>
-      <dependency>
-          <groupId>org.springframework</groupId>
-          <artifactId>spring-core</artifactId>
-          <version>3.1.1.RELEASE</version>
-      </dependency>
-      <dependency>
-          <groupId>org.springframework</groupId>
-          <artifactId>spring-aop</artifactId>
-          <version>3.1.1.RELEASE</version>
-      </dependency>
-      <dependency>
-          <groupId>org.springframework</groupId>
-          <artifactId>spring-context-support</artifactId>
-          <version>3.1.1.RELEASE</version>
-      </dependency>
-      <dependency>
-          <groupId>org.springframework</groupId>
-          <artifactId>spring-context</artifactId>
-          <version>3.1.1.RELEASE</version>
-      </dependency>
-      <dependency>
-          <groupId>org.springframework</groupId>
-          <artifactId>spring-web</artifactId>
-          <version>3.1.1.RELEASE</version>
-      </dependency>
-      <dependency>
-      	<groupId>simplecanpanta</groupId>
-      	<artifactId>simplecanpanta</artifactId>
-      	<version>1.2</version>
-      </dependency>
-      <dependency>
-      	<groupId>org.jsoup</groupId>
-      	<artifactId>jsoup</artifactId>
-      	<version>1.6.3</version>
-      </dependency>
-      <dependency>
-      	<groupId>taobao</groupId>
-      	<artifactId>taobao-sdk-java</artifactId>
-      	<version>20110308</version>
-      </dependency>
-      <dependency>
       	<groupId>javax.mail</groupId>
       	<artifactId>mail</artifactId>
       	<version>1.4.5</version>
@@ -122,11 +72,6 @@
       	<groupId>org.apache.velocity</groupId>
       	<artifactId>velocity</artifactId>
       	<version>1.7</version>
-      </dependency>
-      <dependency>
-      	<groupId>javapns</groupId>
-      	<artifactId>javapns</artifactId>
-      	<version>2.2</version>
       </dependency>
       <dependency>
       	<groupId>org.bouncycastle</groupId>
@@ -144,11 +89,6 @@
       	<version>3.1</version>
       </dependency>
       <dependency>
-      	<groupId>com.google.guava</groupId>
-      	<artifactId>guava</artifactId>
-      	<version>12.0</version>
-      </dependency>
-      <dependency>
       	<groupId>org.codehaus.jackson</groupId>
       	<artifactId>jackson-mapper-asl</artifactId>
       	<version>1.9.7</version>
@@ -159,9 +99,14 @@
       	<version>1.6.6</version>
       </dependency>
       <dependency>
-      	<groupId>com.notnoop.apns</groupId>
-      	<artifactId>apns</artifactId>
-      	<version>0.1.6</version>
+      	<groupId>javax.servlet</groupId>
+      	<artifactId>servlet-api</artifactId>
+      	<version>3.0-alpha-1</version>
+      </dependency>
+      <dependency>
+      	<groupId>org.springframework</groupId>
+      	<artifactId>spring-core</artifactId>
+      	<version>3.1.1.RELEASE</version>
       </dependency>
   </dependencies>
 </project>
