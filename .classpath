@@ -14,6 +14,7 @@
 	</classpathentry>
 	<classpathentry kind="src" path="src/main/resource"/>
 	<classpathentry kind="con" path="org.eclipse.jdt.junit.JUNIT_CONTAINER/4"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.USER_LIBRARY/groovy"/>
 	<classpathentry kind="lib" path="src/main/resource/lib/Jama-1.0.2.jar"/>
 	<classpathentry kind="lib" path="src/main/resource/lib/customizer.jar"/>
 	<classpathentry kind="lib" path="src/main/resource/lib/jmf.jar"/>
@@ -21,7 +22,6 @@
 	<classpathentry kind="lib" path="src/main/resource/lib/multiplayer.jar"/>
 	<classpathentry kind="lib" path="src/main/resource/lib/epublib-core-latest.jar"/>
 	<classpathentry kind="lib" path="src/main/resource/lib/hessdroid.jar"/>
-	<classpathentry kind="con" path="org.eclipse.jdt.USER_LIBRARY/hadoop"/>
 	<classpathentry excluding="**" kind="src" output="target/classes" path="src/main/resources">
 		<attributes>
 			<attribute name="maven.pomderived" value="true"/>
@@ -41,5 +41,6 @@
 	<classpathentry kind="con" path="org.eclipse.jdt.USER_LIBRARY/jdom"/>
 	<classpathentry kind="con" path="org.eclipse.jdt.USER_LIBRARY/sourcecode"/>
 	<classpathentry kind="lib" path="D:/ivycache/org.spring/spring/jars/spring-2.5.5.jar"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.USER_LIBRARY/hadoop"/>
 	<classpathentry kind="output" path="target/classes"/>
 </classpath>
