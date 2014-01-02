@@ -32,13 +32,13 @@ import org.xml.sax.helpers.DefaultHandler;
 
 /**
  * 测试各种xml解析效率
- * 
  * @author jun.bao
  * @since 2013年8月27日
  */
 public class XmlParseTest {
 
-	public static void main(String[] args) throws IOException, ParserConfigurationException, SAXException, DocumentException, JDOMException {
+	public static void main(String[] args) throws IOException, ParserConfigurationException, SAXException,
+			DocumentException, JDOMException {
 		// ClassLoader.getSystemResourceAsStream("soap.xml");
 		URL url = Thread.currentThread().getContextClassLoader().getResource("com/sourcecode/bill99/soap.xml");
 		// System.out.println(url.getFile());
@@ -102,15 +102,16 @@ public class XmlParseTest {
 		NodeList macs = doc.getElementsByTagName("mac");
 
 		Map<String, String> kv = new HashMap<String, String>();
-		kv.put("username", names.item(0).getTextContent());
-		kv.put("ip", ips.item(0).getTextContent());
-		kv.put("mac", macs.item(0).getTextContent());
+		kv.put("username", names.item(0).getNodeValue());
+		kv.put("ip", ips.item(0).getNodeValue());
+		kv.put("mac", macs.item(0).getNodeValue());
 		// System.out.println(names.item(0).getTextContent());
 		// System.out.println(ips.item(0).getTextContent());
 		// System.out.println(macs.item(0).getTextContent());
 	}
 
-	public static void saxTest(URL url) throws ParserConfigurationException, SAXException, FileNotFoundException, IOException {
+	public static void saxTest(URL url) throws ParserConfigurationException, SAXException, FileNotFoundException,
+			IOException {
 		SAXParserFactory factory = SAXParserFactory.newInstance();
 		// factory.setValidating(true);// 开启验证XML功能
 		SAXParser parser = factory.newSAXParser();

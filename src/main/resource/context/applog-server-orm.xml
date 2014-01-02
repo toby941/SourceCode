@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-2.5.xsd
+		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-2.5.xsd"
+		default-lazy-init="true">
+
+ 	<context:annotation-config />
+	<context:component-scan base-package="com.bill99.golden.inf.hbase.service" />
+
+	<bean id="propertyConfigurer4Server" class="org.springframework.beans.factory.config.PropertyPlaceholderConfigurer">
+        <property name="ignoreUnresolvablePlaceholders" value="true"/>
+        <property name="locations">
+            <list>
+                 <value>classpath:properties/if-applog-server.properties</value>
+                <value>classpath:properties/applog-orm.properties</value>
+            </list>
+        </property>
+    </bean>
+    
+	<bean id="hbaseConfiguration" class="com.bill99.golden.inf.hbase.HBaseConfigurationFactoryBean">
+	    <property name="hbaseProperties">
+	        <props>
+	            <!-- hbase.zookeeper.quorum must be specified. Other properties are optional -->
+	            <prop key="hbase.zookeeper.quorum">${if-applog-server.zookeeper.quorum}</prop>
+	            <prop key="hbase.zookeeper.property.clientPort">${if-applog-server.zookeeper.property.clientPort}</prop>
+	            <prop key="applog.regionSize">${if-applog-server.hbase.regionSize}</prop>
+	            <prop key="hbase.regionserver.lease.period">90000</prop>
+	        </props>
+	    </property>
+	</bean>
+    
+   
+    
+</beans>
