@@ -2,28 +2,27 @@ package com.bill99.golden.inf.mapreduce;
 
 import java.io.IOException;
 
-import org.apache.hadoop.hbase.KeyValue;
-import org.apache.hadoop.hbase.client.Put;
-import org.apache.hadoop.hbase.client.Result;
-import org.apache.hadoop.hbase.io.ImmutableBytesWritable;
-import org.apache.hadoop.hbase.mapreduce.TableMapper;
+import org.apache.commons.logging.Log;
+import org.apache.commons.logging.LogFactory;
+import org.apache.hadoop.io.IntWritable;
+import org.apache.hadoop.io.Text;
+import org.apache.hadoop.mapreduce.Mapper;
+import org.apache.hadoop.yarn.server.nodemanager.NodeStatusUpdaterImpl;
 
 /**
  * @author jun.bao
- * @since 2014年1月2日
+ * @since 2014年1月3日
  */
-public class MyMapper extends TableMapper<ImmutableBytesWritable, Put> {
+public class MyMapper extends Mapper<Object, Text, Text, IntWritable> {
 
-	public void map(ImmutableBytesWritable row, Result value, Context context) throws IOException, InterruptedException {
-		// this example is just copying the data from the source table...
-		context.write(row, resultToPut(row, value));
+	private Log log = LogFactory.getLog(NodeStatusUpdaterImpl.class);
+
+	@Override
+	protected void map(Object key, Text value, Context context) throws IOException, InterruptedException {
+		// TODO Auto-generated method stub
+		log.info("****************************value:" + value);
+		System.err.println(value);
+		context.write(new Text(), new IntWritable(Integer.parseInt(value.toString())));
 	}
 
-	private static Put resultToPut(ImmutableBytesWritable key, Result result) throws IOException {
-		Put put = new Put(key.get());
-		for (KeyValue kv : result.raw()) {
-			put.add(kv);
-		}
-		return put;
-	}
 }

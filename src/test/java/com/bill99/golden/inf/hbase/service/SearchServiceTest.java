@@ -50,6 +50,34 @@ public class SearchServiceTest {
 	}
 
 	@Test
+	public void testMin() throws IOException {
+		String startRowKey = "second#4#16#192.168.120.58.MAC.test.13801857475.unionType#1393652310000";
+		String endRowKey = "second#4#16#192.168.120.58.MAC.test.13801857475.unionType#1393652319000";
+		HTableInterface table = new HTable(searchService.getConfiguration(), "PRISM_SECOND");
+		Scan scan = new Scan();
+		List<Filter> list = new ArrayList<Filter>();
+		startRowKey = startRowKey.substring(startRowKey.indexOf("#") + 1);
+		endRowKey = endRowKey.substring(endRowKey.indexOf("#") + 1);
+		list.add(new RowFilter(CompareFilter.CompareOp.LESS_OR_EQUAL, new BinaryComparator(Bytes.toBytes(endRowKey))));
+		list.add(new RowFilter(CompareFilter.CompareOp.GREATER_OR_EQUAL, new BinaryComparator(Bytes
+				.toBytes(startRowKey))));
+		Filter filter = new FilterList(FilterList.Operator.MUST_PASS_ALL, list);
+		scan.setFilter(filter);
+		Long start = System.currentTimeMillis();
+		ResultScanner rs = table.getScanner(scan);
+		for (Result r = rs.next(); r != null; r = rs.next()) {
+			String tmpKey = Bytes.toString(r.getRow());
+			Object tmpValue = Bytes.toString(r.getValue(Bytes.toBytes("DATA"), Bytes.toBytes("VALUE")));
+			long tmpTime = Long.parseLong(tmpKey.substring(tmpKey.lastIndexOf("#") + 1));
+			System.out.println(tmpKey);
+		}
+
+		Long end = System.currentTimeMillis();
+		System.out.println(end - start);
+
+	}
+
+	// @Test
 	public void testScan() throws IOException {
 		String prefix = null;
 		ResultScanner rs = null;
