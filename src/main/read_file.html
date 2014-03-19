@@ -1,0 +1,60 @@
+<html>
+<head>
+<!--  http://angrycoder.iteye.com/blog/1711155-->
+<meta http-equiv="Content-Type" content="text/html;charset=GBK">
+<title>Image LazyLoad</title>
+</head>
+<body onload="searchFiles();lazyload();">
+<div id="div_con" style="text-align:center;"></div>
+
+<script type="text/javascript">
+function searchFiles(){
+    var fso = new ActiveXObject("Scripting.FileSystemObject");
+	var href = (window.location.href+"").replace("file:///","");//获取当前html文件的物理路径。
+	var arr =  href.split("/");
+	var len =  arr.length;
+	arr.pop();//pop掉html文件名称，得到当前html文件所在的物理路径。
+	var path = arr.join("\\\\")+"\\images";//获取当前html所需要的图片的物理路径。
+    var f = fso.GetFolder(path);
+    var fc = new Enumerator(f.files);
+    var arr = [];//用于存储所有的图片信息，最终输出到DIV中。
+	var width  = (document.documentElement.offsetWidth-50)+"px";//页面最大宽度
+	var sTemp = "";//临时变量，用于存储图片名称
+    for (; !fc.atEnd(); fc.moveNext())
+	{
+		sTemp = (fc.item()+"").toLowerCase();
+		var isImg =  (sTemp.indexOf(".jpg")>0 ||sTemp.indexOf(".png")>0||sTemp.indexOf(".bmp")>0||sTemp.indexOf(".gif")>0);
+		if(isImg){
+			sTemp = (fc.item()+"").split("\\")[len];
+
+			arr.push( '<img alt="image" title="');
+			arr.push(sTemp);
+			////默认显示图片的alt，使用file缓存图片的链接地址，用于动态赋值给图片的src
+			arr.push('" style="float:middle;border:10px inset #cccccc;max-width:'+width+';margin-top:20px;" file="images/');
+			arr.push(sTemp);
+			arr.push('"  /><br/>');
+		}
+	}
+	document.getElementById("div_con").innerHTML = arr.join("");
+}
+
+function lazyload(){
+	var arr = document.getElementsByTagName("IMG");	//当前页面的所有图片
+	var nOffsetHeight  = document.documentElement.offsetHeight;
+	var img;//临时变量
+
+	for(var i=0,len=arr.length;i<len;i++){
+		img = arr[i];
+		if(!!img.getAttribute("src")==true){continue;}
+		//如果图片的带滚动条的上边距  < 页面高度 + 页面Y轴滚动条的距离，也就是【图片在滚动条的可见范围内】
+		if(img.offsetTop < nOffsetHeight+document.documentElement.scrollTop){
+			img.setAttribute("src",img.getAttribute("file"));//给图片的src赋值，加载并显示图片。
+		}
+	}
+}
+//注册事件监听
+window.onscroll= lazyload;
+window.resize= lazyload;
+       
+</script>
+</body>
