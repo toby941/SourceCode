@@ -11,11 +11,8 @@ import org.junit.Test;
  */
 public class ConcurrentHashMapTest {
 	public static void main(String[] args) {
-		String a = "test";
-		String b = "test";
-		String c = b.intern();
-		System.err.println(a == b);
-		System.err.println(a == c);
+		long s = 1234455666676L;
+		System.out.println(s ^ (s - 1));
 
 	}
 
