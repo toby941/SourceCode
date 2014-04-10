@@ -3,11 +3,8 @@ package com.fc.service.token.task;
 import java.util.concurrent.Callable;
 import java.util.concurrent.FutureTask;
 
-import com.bill99.fc.service.token.task.TokenCallable;
-
 /**
  * 封装异步获取token请求的 {@link FutureTask}
- * 
  * @author jun.bao
  * @since 2013年7月31日
  */

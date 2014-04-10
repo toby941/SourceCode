@@ -8,9 +8,6 @@ import java.util.concurrent.RunnableFuture;
 import java.util.concurrent.ThreadPoolExecutor;
 import java.util.concurrent.TimeUnit;
 
-import com.bill99.fc.service.token.task.TokenCallable;
-import com.bill99.fc.service.token.task.TokenFutureTask;
-
 /**
  * @author jun.bao
  * @since 2013年7月31日

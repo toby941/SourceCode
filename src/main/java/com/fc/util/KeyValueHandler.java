@@ -8,8 +8,6 @@ import org.xml.sax.SAXException;
 import org.xml.sax.SAXParseException;
 import org.xml.sax.helpers.DefaultHandler;
 
-import com.bill99.fc.util.ChildNodeKeyFilter;
-
 /**
  * 将xml中经过 {@link ChildNodeKeyFilter}过滤的待提取属性以key-value方式返回一个map集合
  * @author jun.bao

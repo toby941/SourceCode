@@ -7,8 +7,6 @@ import java.util.concurrent.RejectedExecutionHandler;
 import java.util.concurrent.ThreadPoolExecutor;
 import java.util.concurrent.TimeUnit;
 
-import com.bill99.fc.service.token.task.HttpCallable;
-
 /**
  * 异步提交http请求的线程调度类
  * @author jun.bao

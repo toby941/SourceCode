@@ -37,6 +37,22 @@
 	<classpathentry kind="con" path="org.eclipse.jdt.USER_LIBRARY/HBase 0.94.2"/>
 	<classpathentry kind="lib" path="D:/Local_Repository/ivy-cache/org.dom4j/dom4j/jars/dom4j-1.6.1.jar"/>
 	<classpathentry kind="lib" path="D:/dev/3rd_lib/junit-4.4.jar"/>
-	<classpathentry kind="src" path="/tomcat-6.0.35"/>
+	<classpathentry kind="lib" path="src/main/resource/lib/tomcat/annotations-api.jar"/>
+	<classpathentry kind="lib" path="src/main/resource/lib/tomcat/catalina-ant.jar"/>
+	<classpathentry kind="lib" path="src/main/resource/lib/tomcat/catalina-ha.jar"/>
+	<classpathentry kind="lib" path="src/main/resource/lib/tomcat/catalina-tribes.jar"/>
+	<classpathentry kind="lib" path="src/main/resource/lib/tomcat/catalina.jar"/>
+	<classpathentry kind="lib" path="src/main/resource/lib/tomcat/ecj-4.2.2.jar"/>
+	<classpathentry kind="lib" path="src/main/resource/lib/tomcat/el-api.jar"/>
+	<classpathentry kind="lib" path="src/main/resource/lib/tomcat/jasper-el.jar"/>
+	<classpathentry kind="lib" path="src/main/resource/lib/tomcat/jasper.jar"/>
+	<classpathentry kind="lib" path="src/main/resource/lib/tomcat/jsp-api.jar"/>
+	<classpathentry kind="lib" path="src/main/resource/lib/tomcat/servlet-api.jar"/>
+	<classpathentry kind="lib" path="src/main/resource/lib/tomcat/tomcat-coyote.jar"/>
+	<classpathentry kind="lib" path="src/main/resource/lib/tomcat/tomcat-dbcp.jar"/>
+	<classpathentry kind="lib" path="src/main/resource/lib/tomcat/tomcat-i18n-es.jar"/>
+	<classpathentry kind="lib" path="src/main/resource/lib/tomcat/tomcat-i18n-fr.jar"/>
+	<classpathentry kind="lib" path="src/main/resource/lib/tomcat/tomcat-i18n-ja.jar"/>
+	<classpathentry kind="lib" path="src/main/resource/lib/tomcat/tomcat-juli-7.0.0.jar"/>
 	<classpathentry kind="output" path="target/classes"/>
 </classpath>

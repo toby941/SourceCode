@@ -9,7 +9,6 @@ import java.io.InputStreamReader;
 import javax.servlet.ServletInputStream;
 
 import org.apache.catalina.connector.CoyoteAdapter;
-import org.apache.catalina.connector.CoyoteInputStream;
 import org.apache.catalina.connector.Request;
 
 /**
@@ -99,8 +98,9 @@ public class TwiceReadRequest extends Request {
 		BufferedReader bufferedReader = null;
 
 		try {
-			InputStream inputStream = new CoyoteInputStream(inputBuffer);
-
+			// InputStream inputStream = new CoyoteInputStream(inputBuffer);
+			// CoyoteInputStream构造方法不可见 需改造
+			InputStream inputStream = null;
 			if (inputStream != null) {
 				bufferedReader = new BufferedReader(new InputStreamReader(inputStream));
 
@@ -127,5 +127,4 @@ public class TwiceReadRequest extends Request {
 
 		body = stringBuilder.toString();
 	}
-
 }

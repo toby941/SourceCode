@@ -2,11 +2,8 @@ package com.fc.service.token.priority;
 
 import java.io.InputStream;
 
-import com.bill99.fc.service.token.priority.PriorityPloy;
-
 /**
  * 默认实现
- * 
  * @author jun.bao
  * @since 2013年8月29日
  */
