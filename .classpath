@@ -37,5 +37,6 @@
 	<classpathentry kind="con" path="org.eclipse.jdt.USER_LIBRARY/HBase 0.94.2"/>
 	<classpathentry kind="lib" path="D:/Local_Repository/ivy-cache/org.dom4j/dom4j/jars/dom4j-1.6.1.jar"/>
 	<classpathentry kind="lib" path="D:/dev/3rd_lib/junit-4.4.jar"/>
+	<classpathentry kind="src" path="/tomcat-6.0.35"/>
 	<classpathentry kind="output" path="target/classes"/>
 </classpath>

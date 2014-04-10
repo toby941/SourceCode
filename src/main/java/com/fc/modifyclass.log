@@ -1,0 +1,5 @@
+#log which tomcat source code has been modify 
+org.apache.catalina.core.StandardContext#init()
+org.apache.catalina.connector.CoyoteAdapter#service(Request, Response)
+
+
